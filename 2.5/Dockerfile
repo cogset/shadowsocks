@@ -10,7 +10,7 @@ RUN groupadd -r shadowsocks && useradd -r -g shadowsocks shadowsocks
 ENV SHADOWSOCKS_VERSION v2.5.5
 
 # Install
-RUN buildDeps="wget autoconf make g++ libssl-dev libpcre3-dev" \
+RUN buildDeps="wget autoconf make g++ libssl-dev libpcre3-dev ca-certificates" \
     && apt-get update \
     && apt-get install -y --no-install-recommends pwgen build-essential libtool asciidoc xmlto $buildDeps \
     && wget -O shadowsocks.tar.gz "https://github.com/shadowsocks/shadowsocks-libev/archive/$SHADOWSOCKS_VERSION.tar.gz" \
