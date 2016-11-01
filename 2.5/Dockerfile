@@ -33,4 +33,4 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 8989
 
-CMD ["--help"]
+CMD ["ss-server"]

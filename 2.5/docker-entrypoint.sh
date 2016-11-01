@@ -34,9 +34,9 @@ if [ "$1" != "ss-server" ]; then
 fi
 
 shift
-OPTIONS=`getopt -o p:m:t:od:uUvh --long password:,encrypt-method:,timeout:,onetime-auth,dns:,acl:,fast-open,mtu:,help -n ss-server -- "$@"`
+OPTIONS=`getopt -o p:m:t:od:uUvh --long password:,encrypt-method:,timeout:,onetime-auth,dns:,acl:,fast-open,mtu:,help -n shadowsocks -- "$@"`
 if [ $? -ne 0 ]; then
-  print_server_usage
+  print_usage
   exit 1
 fi
 
@@ -47,23 +47,23 @@ SS_USER="-a shadowsocks"
 eval set -- "$OPTIONS"
 while true; do
   case "$1" in
-    -p|--password)            SS_PASSWORD="-k $2";           shift 2;;
-    -m|--encrypt-method)      SS_ENCRYPT_METHOD="-m $2";     shift 2;;
-    -t|--timeout)             SS_TIMEOUT="-t $2";            shift 2;;
-    -o|--onetime-auth)        SS_ONETIME_AUTH="-A";          shift;;
-    -d|--dns)                 SS_DNS="-d $2";                shift 2;;
-    -u)                       SS_UDP_RELAY="-u";             shift;;
-    -U)                       SS_UDP_RELAY_ONLY="-U";        shift;;
-    -v)                       SS_VERBOSE="-v";               shift;;
-    --acl)                    SS_ACL="--acl $2";             shift 2;;
-    --fast-open)              SS_FAST_OPEN="--fast-open";    shift;;
-    --mtu)                    SS_MTU="--mtu $2";             shift 2;;
-    --)                                                   shift; break;;
-    -h|--help)                print_server_usage;         exit 0;;
+    -p|--password)            SS_PASSWORD="-k $2";            shift 2;;
+    -m|--encrypt-method)      SS_ENCRYPT_METHOD="-m $2";      shift 2;;
+    -t|--timeout)             SS_TIMEOUT="-t $2";             shift 2;;
+    -o|--onetime-auth)        SS_ONETIME_AUTH="-A";           shift;;
+    -d|--dns)                 SS_DNS="-d $2";                 shift 2;;
+    -u)                       SS_UDP_RELAY="-u";              shift;;
+    -U)                       SS_UDP_RELAY_ONLY="-U";         shift;;
+    -v)                       SS_VERBOSE="-v";                shift;;
+    --acl)                    SS_ACL="--acl $2";              shift 2;;
+    --fast-open)              SS_FAST_OPEN="--fast-open";     shift;;
+    --mtu)                    SS_MTU="--mtu $2";              shift 2;;
+    --)                                                       shift; break;;
+    -h|--help)                print_usage;                    exit 0;;
 
     *)
       echo "Unexpected argument: $1"
-      print_server_usage
+      print_usage
       exit 1;;
   esac
 done
@@ -71,7 +71,7 @@ done
 if [ -z "$SS_PASSWORD" ]; then
   SS_PASSWORD="$(pwgen -1 8)"
   echo "Generated password: $SS_PASSWORD"
-  SS_PASSWORD="-k $2"
+  SS_PASSWORD="-k $SS_PASSWORD"
 fi
 
 ss-server $SS_HOST $SS_PORT $SS_USER $SS_PASSWORD $SS_ENCRYPT_METHOD $SS_TIMEOUT $SS_ONETIME_AUTH $SS_DNS $SS_UDP_RELAY $SS_UDP_RELAY_ONLY $SS_VERBOSE $SS_ACL $SS_FAST_OPEN $SS_MTU
