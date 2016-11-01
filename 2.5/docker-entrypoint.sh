@@ -68,4 +68,10 @@ while true; do
   esac
 done
 
+if [ -z "$SS_PASSWORD" ]; then
+  SS_PASSWORD="$(pwgen -1 8)"
+  echo "Generated password: $SS_PASSWORD"
+  SS_PASSWORD="-k $2"
+fi
+
 ss-server $SS_HOST $SS_PORT $SS_USER $SS_PASSWORD $SS_ENCRYPT_METHOD $SS_TIMEOUT $SS_ONETIME_AUTH $SS_DNS $SS_UDP_RELAY $SS_UDP_RELAY_ONLY $SS_VERBOSE $SS_ACL $SS_FAST_OPEN $SS_MTU
