@@ -33,5 +33,5 @@ $ docker run -t --name shadowsocks youmingdot/shadowsocks:latest -h
 
 ------
 ### Apologize for my poor English
-If there's some grammar or word errors, please point out.
+If there's any grammar or word mistakes, please point out.
 如果发现有语法或者用词错误，敬请指出。
