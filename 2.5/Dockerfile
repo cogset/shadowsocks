@@ -1,4 +1,4 @@
-# Shadowsocks 5
+# Shadowsocks
 # AUTHOR You Ming
 
 FROM debian:jessie
