@@ -1,9 +1,13 @@
 ## Shadowsocks in Docker
-[![build status badge](https://travis-ci.org/youmingdot/docker-shadowsocks.svg)](https://travis-ci.org/youmingdot/docker-shadowsocks5)
-[![layers badge](https://images.microbadger.com/badges/image/youmingdot/shadowsocks.svg)](https://microbadger.com/images/youmingdot/shadowsocks)
+[![build status badge](https://travis-ci.org/cogset/shadowsocks.svg)](https://travis-ci.org/cogset/shadowsocks)
+[![layers badge](https://images.microbadger.com/badges/image/cogset/shadowsocks.svg)](https://microbadger.com/images/cogset/shadowsocks)
 ### Supported tags and respective Dockerfile links
 
-+ `2.5.5`, `2.5`, `latest` [(2.5/Dockerfile)](https://github.com/youmingdot/docker-shadowsocks/blob/master/2.5/Dockerfile)
++ `2.5.6`, `2.5`, `latest` [(2.5/Dockerfile)](https://github.com/cogset/shadowsocks/blob/master/2.5/Dockerfile)
+
+------
+### Software website
++ [Shadowsocks](https://shadowsocks.org)
 
 ------
 ### Author
@@ -14,24 +18,19 @@
 
 ##### Run a Shadowsocks instance
 ```
-$ docker run -d --name shadowsocks -p 8989:8989 youmingdot/shadowsocks:latest
+$ docker run -d --name shadowsocks -p 8989:8989 cogset/shadowsocks:latest
 ```
 The port of socks server is `8989`.
 
 ##### Set authorization
 You can use `-p` or `--password` to set authorization. 
 ```
-$ docker run -d --name shadowsocks -p 8989:8989 youmingdot/shadowsocks:latest -p 1234
+$ docker run -d --name shadowsocks -p 8989:8989 cogset/shadowsocks:latest -p 1234
 ```
 If you start container without password, a password will be generated automatically.
 
 ##### Other options
 Use `-h` or `--help` for full usage. 
 ```
-$ docker run -t --name shadowsocks youmingdot/shadowsocks:latest -h
+$ docker run -t --name shadowsocks cogset/shadowsocks:latest -h
 ```
-
-------
-### Apologize for my poor English
-If there's any grammar or word mistakes, please point out.
-如果发现有语法或者用词错误，敬请指出。
