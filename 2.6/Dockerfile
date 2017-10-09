@@ -7,7 +7,7 @@ MAINTAINER Cogset <cogset@funcuter.org>
 
 RUN groupadd -r shadowsocks && useradd -r -g shadowsocks shadowsocks
 
-ENV SHADOWSOCKS_VERSION v2.5.6
+ENV SHADOWSOCKS_VERSION v2.6.3
 
 # Install
 RUN buildDeps="wget autoconf make g++ libssl-dev libpcre3-dev ca-certificates" \
