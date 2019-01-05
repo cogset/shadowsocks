@@ -3,9 +3,8 @@
 [![layers badge](https://images.microbadger.com/badges/image/cogset/shadowsocks.svg)](https://microbadger.com/images/cogset/shadowsocks)
 ### Supported tags and respective Dockerfile links
 
-+ `2.6.3`, `2.6`, `latest` [(2.6/Dockerfile)](https://github.com/cogset/shadowsocks/blob/master/2.6/Dockerfile)
-+ `3.0.8`, `3.0`, `latest` [(3.0/Dockerfile)](https://github.com/cogset/shadowsocks/blob/master/3.0/Dockerfile)
-+ `3.1.0`, `3.1`, `latest` [(3.1/Dockerfile)](https://github.com/cogset/shadowsocks/blob/master/3.1/Dockerfile)
++ `3.1.3`, `3.1`, `latest` [(3.1/Dockerfile)](https://github.com/cogset/shadowsocks/blob/master/3.1/Dockerfile)
++ `3.2.3`, `3.2`, `latest` [(3.2/Dockerfile)](https://github.com/cogset/shadowsocks/blob/master/3.2/Dockerfile)
 
 ------
 ### Software website
